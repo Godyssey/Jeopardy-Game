@@ -1,5 +1,4 @@
 // Main JavaScript file for the application
-
 // Variables
 const mobileMenu = document.querySelector('.mobile-nav');
 const hamburger = document.querySelector('.hamburger');
@@ -8,18 +7,15 @@ const registering = document.querySelector('.registering');
 const play = document.querySelector('.play');
 const quit = document.querySelector('.quit');
 const again = document.querySelector('.play-agn');
-
 // Highlight the menu item that is currently active
 menu.addEventListener('click', function () {
     this.classList.toggle('is-active');
 });
-
 // Animate the hamburger menu and show the mobile menu
 hamburger.addEventListener('click', function () {
     this.classList.toggle('is-active');
     mobileMenu.classList.toggle('is-active');
 });
-
 //Function to calculate age based on date of birth
 function calculateAge() {
     var birthDate = new Date(document.getElementById("dob").value);
@@ -52,7 +48,6 @@ function Register() {
     var education = document.forms["registration"]["education"].value;
     var image = document.forms["registration"]["image"].value;
     var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
-
     if (fname == "" || fname.length < 4) {
         alert("First name must be filled out | 4 or more characters");
         return false;
@@ -89,12 +84,9 @@ function Register() {
         }
         console.table(PlayersData);
         alert("Welcome " + fname + " " + lname + " to Jeopardy!");
-        //Function to disable/enable buttons
-        registering.addEventListener('click', disableEnable);
         return true;
     }
 }
-
 const disableEnable = () => {
     registering.disabled = true;
     play.disabled = false;
