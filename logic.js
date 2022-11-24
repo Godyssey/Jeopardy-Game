@@ -6,6 +6,7 @@ function PlayGame(){
 }
 document.querySelector('#play').addEventListener('click',buildCategories)
 document.querySelector('#play-agn').addEventListener('click',buildCategories)
+
 //CREATE CATEGORY ROW
 function initCatRow() {
     let catRow = document.getElementById('category-row')
