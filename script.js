@@ -8,7 +8,6 @@ const registering = document.querySelector('.registering');
 const play = document.querySelector('.play');
 const quit = document.querySelector('.quit');
 const again = document.querySelector('.play-agn');
-const results = document.querySelector('.results');
 
 // Highlight the menu item that is currently active
 menu.addEventListener('click', function () {
@@ -34,7 +33,7 @@ function calculateAge() {
     document.getElementById("age").value = age;    
 }
 //Global array to store the data
-    const PlayersData = [];
+    var PlayersData = [];
     
 //Function to validate the form
 function Register() {
@@ -46,7 +45,10 @@ function Register() {
     var email = document.forms["registration"]["email"].value;
     var atpos = email.indexOf("@");
     var dotpos = email.lastIndexOf(".");
+    var street = document.forms["registration"]["street"].value;
+    var city = document.forms["registration"]["city"].value;
     var town = document.forms["registration"]["town"].value;
+    var country = document.forms["registration"]["country"].value;
     var education = document.forms["registration"]["education"].value;
     var image = document.forms["registration"]["image"].value;
     var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
@@ -81,31 +83,21 @@ function Register() {
         alert("Correct image format must be selected");
         return false;
     } else {
-        PlayersData.push(fname + " " + lname + " " + age + " " + town);
+        PlayersData.push(fname + " " + lname + " " + gender + " " + dob + " " + town + " " + education);
         for (var i = 0; i < PlayersData.length; i++) {
             localStorage.setItem(i, PlayersData[i]);
         }
         console.table(PlayersData);
         alert("Welcome " + fname + " " + lname + " to Jeopardy!");
+        //Function to disable/enable buttons
+        registering.addEventListener('click', disableEnable);
         return true;
     }
 }
-//Disable buttons
+
 const disableEnable = () => {
     registering.disabled = true;
-    document.getElementById("fname").disabled = true;
-    document.getElementById("lname").disabled = true;
-    document.getElementById("gender").disabled = true;
-    document.getElementById("dob").disabled = true;
-    document.getElementById("email").disabled = true;
-    document.getElementById("street").disabled = true;
-    document.getElementById("city").disabled = true;
-    document.getElementById("town").disabled = true;
-    document.getElementById("country").disabled = true;
-    document.getElementById("education").disabled = true;
-    document.getElementById("image").disabled = true;
     play.disabled = false;
     quit.disabled = false;
     again.disabled = false;
-    results.disabled = false;
 };

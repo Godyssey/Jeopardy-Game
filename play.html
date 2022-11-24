@@ -96,15 +96,14 @@
             <input type="file" name="image" id="image">
             <br><br>
             <br>
-            <button type="button" class="regbut registering" id="registering" onclick="Register(); disableEnable()">REGISTER</button>
+            <button type="button" class="regbut registering" id="registering" onclick="Register()">REGISTER</button>
             <button type="button" class="regbut play" id="play" onclick="PlayGame()" disabled>PLAY</button>
-            <button type="button" class="regbut quit" id="quit" onclick="findPercentageScore(); enableDisable()" disabled>QUIT</button>
-            <button type="button" class="regbut results" id="results" onclick="findPercentageScore()" disabled>RESULTS</button>
+            <button type="button" class="regbut quit" id="quit" onclick="findPercentageScore()" disabled>QUIT</button>
             <br><br><br><br>
             <label class="register">Player Statistics</label>
-            <textarea class="register disabled" name="showpercentage" id="showpercentage" onchange="findPercentageScore()" disabled></textarea>
+            <textarea class="register disabled" name="showpercentage" id="playerinfo" disabled></textarea>
             <label class="register">Player Data</label>
-            <textarea class="register disabled" name="showallplayers" id="showallplayers" onchange="showAll()" disabled></textarea>
+            <textarea class="register disabled" name="showallplayers" id="showallplayers" disabled></textarea>
         </form>
         <script src="script.js"></script>
     </fieldset>
@@ -122,10 +121,8 @@
             <div id="category-row"></div>
             <div id="clue-board"></div>
             <br>
-            <button type="button" class="regbut play-agn" id="play-agn" onclick="PlayGame()">PLAY
+            <button type="button" class="regbut play-agn" id="play-agn" onclick="PlayGame()" disabled>PLAY
                 AGAIN</button>
-            <button type="button" class="regbut end" id="end" onclick="findPercentageScore()">END 
-                GAME</button>
         </div>
         <br><br>
     </div>
