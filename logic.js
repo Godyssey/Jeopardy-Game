@@ -109,24 +109,53 @@ function showQuestion(clue, target, boxValue) {
     let possiblePoints = +(boxValue)
     target.innerHTML = clue.answer
     target.removeEventListener('click',getClue,false)
-    evaluateAnswer(userAnswer, correctAnswer, possiblePoints)
+    checkAnswer(userAnswer, correctAnswer, possiblePoints)
+    showAll()
 }
 // EVALUATE ANSWER AND SHOW TO USER TO CONFIRM
-function evaluateAnswer(userAnswer, correctAnswer, possiblePoints) {
-    let checkAnswer = (userAnswer == correctAnswer) ? 'correct' : 'incorrect'
+function checkAnswer(userAnswer, correctAnswer, possiblePoints) {
+    let evaluateAnswer = (userAnswer == correctAnswer) ? 'correct' : 'incorrect'
     let confirmAnswer = 
-    confirm(`For $${possiblePoints}, you answered "${userAnswer}", and the correct answer was "${correctAnswer}". Your answer appears to be ${checkAnswer}. Click OK to accept or click Cancel if the answer was not properly evaluated.`)
-    awardPoints(checkAnswer, confirmAnswer, possiblePoints)
+    confirm(`For $${possiblePoints}, you answered "${userAnswer}", and the correct answer was "${correctAnswer}". Your answer appears to be ${evaluateAnswer}. Click OK to accept or click Cancel if the answer was not properly evaluated.`)
+    awardPoints(evaluateAnswer, confirmAnswer, possiblePoints)
 }
 // AWARD POINTS
-function awardPoints(checkAnswer, confirmAnswer, possiblePoints) {
-    if (!(checkAnswer == 'incorrect' && confirmAnswer == true)) {
+function awardPoints(evaluateAnswer, confirmAnswer, possiblePoints) {
+    var wrongAnswer = 0
+    var rightAnswer = 0
+    var totalQuestions = 0
+    if (!(evaluateAnswer == 'incorrect' && confirmAnswer == true)) {
         let target = document.getElementById('score')
         let currentScore = +(target.innerText)
         currentScore += possiblePoints
         target.innerText = currentScore
+        rightAnswer += 1
     } else {
         currentScore -= possiblePoints
         target.innerText = currentScore
+        wrongAnswer += 1
     }
+    totalQuestions += 1
 }
+
+//FIND PERCENTAGE SCORE
+function findPercentageScore() {
+    PlayersData[0].push(" " + totalQuestions + " " + rightAnswer + " " + wrongAnswer);
+
+    var today = new Date();
+    var day = String(today.getDate());
+    var month = String(today.getMonth() + 1);
+    var year = String(today.getFullYear());
+
+    PlayersData[0].push(" " + day + "/" + month + "/" + year);
+    var percentageScore = (rightAnswer / totalQuestions) * 100;
+    PlayersData[0].push(" "  + percentageScore + "%");
+    document.getElementById("showpercentage").innerHTML = PlayersData[0];
+}
+
+//SHOW ALL PLAYERS
+function showAll() {
+    document.getElementById("showallplayers").value = '';
+    document.getElementById("showallplayers").innerHTML = PlayersData;
+}
+

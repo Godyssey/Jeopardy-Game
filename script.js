@@ -83,7 +83,7 @@ function Register() {
         alert("Correct image format must be selected");
         return false;
     } else {
-        PlayersData.push(fname + " " + lname + " " + gender + " " + dob + " " + town + " " + education);
+        PlayersData.push(fname + " " + lname + " " + town);
         for (var i = 0; i < PlayersData.length; i++) {
             localStorage.setItem(i, PlayersData[i]);
         }
