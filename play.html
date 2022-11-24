@@ -101,9 +101,9 @@
             <button type="button" class="regbut quit" id="quit" onclick="findPercentageScore()" disabled>QUIT</button>
             <br><br><br><br>
             <label class="register">Player Statistics</label>
-            <textarea class="register disabled" name="showpercentage" id="playerinfo" disabled></textarea>
+            <textarea class="register disabled" name="showpercentage" id="showpercentage" onchange="findPercentageScore()" disabled></textarea>
             <label class="register">Player Data</label>
-            <textarea class="register disabled" name="showallplayers" id="showallplayers" disabled></textarea>
+            <textarea class="register disabled" name="showallplayers" id="showallplayers" onchange="showAll()" disabled></textarea>
         </form>
         <script src="script.js"></script>
     </fieldset>
