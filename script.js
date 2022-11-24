@@ -89,8 +89,6 @@ function Register() {
         }
         console.table(PlayersData);
         alert("Welcome " + fname + " " + lname + " to Jeopardy!");
-        //Function to disable/enable buttons
-        registering.addEventListener('click', disableEnable);
         return true;
     }
 }
