@@ -7,6 +7,7 @@ const menu = document.querySelector('.menu');
 const registering = document.querySelector('.registering');
 const play = document.querySelector('.play');
 const quit = document.querySelector('.quit');
+const again = document.querySelector('.play-agn');
 
 // Highlight the menu item that is currently active
 menu.addEventListener('click', function () {
@@ -88,13 +89,15 @@ function Register() {
         }
         console.table(PlayersData);
         alert("Welcome " + fname + " " + lname + " to Jeopardy!");
+        //Function to disable/enable buttons
         registering.addEventListener('click', disableEnable);
         return true;
     }
 }
 
 const disableEnable = () => {
-        registering.disabled = true;
-        play.disabled = false;
-        quit.disabled = false;
+    registering.disabled = true;
+    play.disabled = false;
+    quit.disabled = false;
+    again.disabled = false;
 };

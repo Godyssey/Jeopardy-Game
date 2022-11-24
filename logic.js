@@ -6,10 +6,10 @@ function PlayGame(){
     initBoard()
 }
 
-document.querySelector('#start-game').addEventListener('click',buildCategories)
+document.querySelector('#play').addEventListener('click',buildCategories)
+document.querySelector('#play-agn').addEventListener('click',buildCategories)
 
 //CREATE CATEGORY ROW
-
 function initCatRow() {
     let catRow = document.getElementById('category-row')
 
@@ -22,12 +22,10 @@ function initCatRow() {
 }
 
 //CREATE CLUE BOARD
-
 function initBoard() {
     let board = document.getElementById('clue-board')
 
     //GENERATE 5 ROWS, THEN PLACE 5 BOXES IN EACH ROW
-
     for (let i = 0; i < 5; i++) {
         let row = document.createElement('div')
         let boxValue = 100 * (i + 1)
@@ -46,8 +44,7 @@ function initBoard() {
     }
 }
 
-//CALL API
-
+//CALL API TO GET RANDOM CATEGORY
 function randInt() {
     return Math.floor(Math.random() * (18418) + 1)
 }
@@ -91,7 +88,6 @@ function buildCategories () {
 }
 
 //RESET BOARD AND $$ AMOUNT IF NEEDED
-
 function resetBoard() {
     let clueParent = document.getElementById('clue-board')
     while (clueParent.firstChild) {
@@ -101,13 +97,12 @@ function resetBoard() {
     while (catParent.firstChild) {
         catParent.removeChild(catParent.firstChild)
     }
-    document.getElementById('score').innerText = 0
+    document.getElementById('score').innerText = 100
     initBoard()
     initCatRow()
 }
 
 //LOAD CATEGORIES TO THE BOARD
-
 function setCategories (catArray) {
     let element = document.getElementById('category-row')
         let children = element.children;
@@ -117,7 +112,6 @@ function setCategories (catArray) {
 }
 
 //FIGURE OUT WHICH ITEM WAS CLICKED
-
 function getClue (event) {
     let child = event.currentTarget
     child.classList.add('clicked-box')
@@ -133,7 +127,6 @@ function getClue (event) {
 }
 
 //SHOW QUESTION TO USER AND GET THEIR ANSWER!
-
 function showQuestion(clue, target, boxValue) {
     let userAnswer = prompt(clue.question).toLowerCase()
     let correctAnswer = clue.answer.toLowerCase().replace(/<\/?[^>]+(>|$)/g, "")
@@ -143,8 +136,7 @@ function showQuestion(clue, target, boxValue) {
     evaluateAnswer(userAnswer, correctAnswer, possiblePoints)
 }
 
-// EVALUATE ANSWER AND SHOW TO USER TO CONFIRM
-
+//EVALUATE ANSWER AND SHOW TO USER TO CONFIRM
 function evaluateAnswer(userAnswer, correctAnswer, possiblePoints) {
     let checkAnswer = (userAnswer == correctAnswer) ? 'correct' : 'incorrect'
     let confirmAnswer = 
@@ -152,8 +144,7 @@ function evaluateAnswer(userAnswer, correctAnswer, possiblePoints) {
     awardPoints(checkAnswer, confirmAnswer, possiblePoints)
 }
 
-// AWARD POINTS
-
+//AWARD POINTS TO USER
 function awardPoints(checkAnswer, confirmAnswer, possiblePoints) {
     if (!(checkAnswer == 'incorrect' && confirmAnswer == true)) {
         let target = document.getElementById('score')
@@ -164,5 +155,4 @@ function awardPoints(checkAnswer, confirmAnswer, possiblePoints) {
         currentScore -= possiblePoints
         target.innerText = currentScore
     }
-
 }
