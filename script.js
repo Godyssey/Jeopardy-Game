@@ -33,7 +33,7 @@ function calculateAge() {
     document.getElementById("age").value = age;    
 }
 //Global array to store the data
-    var PlayersData = [];
+    const PlayersData = [];
     
 //Function to validate the form
 function Register() {
@@ -45,10 +45,7 @@ function Register() {
     var email = document.forms["registration"]["email"].value;
     var atpos = email.indexOf("@");
     var dotpos = email.lastIndexOf(".");
-    var street = document.forms["registration"]["street"].value;
-    var city = document.forms["registration"]["city"].value;
     var town = document.forms["registration"]["town"].value;
-    var country = document.forms["registration"]["country"].value;
     var education = document.forms["registration"]["education"].value;
     var image = document.forms["registration"]["image"].value;
     var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
