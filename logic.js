@@ -4,8 +4,15 @@ function PlayGame(){
     initCatRow()
     initBoard()
 }
+
 document.querySelector('#play').addEventListener('click',buildCategories)
 document.querySelector('#play-agn').addEventListener('click',buildCategories)
+
+//BUTTON VARIABLES
+const registering = document.querySelector('.registering');
+const play = document.querySelector('.play');
+const quit = document.querySelector('.quit');
+const again = document.querySelector('.play-agn');
 
 //CREATE CATEGORY ROW
 function initCatRow() {
@@ -119,11 +126,14 @@ function checkAnswer(userAnswer, correctAnswer, possiblePoints) {
     confirm(`For $${possiblePoints}, you answered "${userAnswer}", and the correct answer was "${correctAnswer}". Your answer appears to be ${evaluateAnswer}. Click OK to accept or click Cancel if the answer was not properly evaluated.`)
     awardPoints(evaluateAnswer, confirmAnswer, possiblePoints)
 }
+
+//RIGHT / WRONG Variables
+var wrongAnswer = 0
+var rightAnswer = 0
+var totalQuestions = 0
+
 // AWARD POINTS
 function awardPoints(evaluateAnswer, confirmAnswer, possiblePoints) {
-    var wrongAnswer = 0
-    var rightAnswer = 0
-    var totalQuestions = 0
     if (!(evaluateAnswer == 'incorrect' && confirmAnswer == true)) {
         let target = document.getElementById('score')
         let currentScore = +(target.innerText)
@@ -159,3 +169,10 @@ function showAll() {
     document.getElementById("showallplayers").innerHTML = PlayersData;
 }
 
+//ENABLE BUTTONS
+const enableDisable = () => {
+    registering.disabled = false;
+    play.disabled = true;
+    quit.disabled = true;
+    again.disabled = true;
+};

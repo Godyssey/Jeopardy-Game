@@ -98,7 +98,7 @@
             <br>
             <button type="button" class="regbut registering" id="registering" onclick="Register(); disableEnable()">REGISTER</button>
             <button type="button" class="regbut play" id="play" onclick="PlayGame()" disabled>PLAY</button>
-            <button type="button" class="regbut quit" id="quit" onclick="findPercentageScore()" disabled>QUIT</button>
+            <button type="button" class="regbut quit" id="quit" onclick="findPercentageScore(); enableDisable()" disabled>QUIT</button>
             <br><br><br><br>
             <label class="register">Player Statistics</label>
             <textarea class="register disabled" name="showpercentage" id="showpercentage" onchange="findPercentageScore()" disabled></textarea>
