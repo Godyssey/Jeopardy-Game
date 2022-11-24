@@ -8,6 +8,7 @@ const registering = document.querySelector('.registering');
 const play = document.querySelector('.play');
 const quit = document.querySelector('.quit');
 const again = document.querySelector('.play-agn');
+const results = document.querySelector('.results');
 
 // Highlight the menu item that is currently active
 menu.addEventListener('click', function () {
@@ -80,7 +81,7 @@ function Register() {
         alert("Correct image format must be selected");
         return false;
     } else {
-        PlayersData.push(fname + " " + lname + " " + town);
+        PlayersData.push(fname + " " + lname + " " + age + " " + town);
         for (var i = 0; i < PlayersData.length; i++) {
             localStorage.setItem(i, PlayersData[i]);
         }
@@ -89,10 +90,22 @@ function Register() {
         return true;
     }
 }
-
+//Disable buttons
 const disableEnable = () => {
     registering.disabled = true;
+    document.getElementById("fname").disabled = true;
+    document.getElementById("lname").disabled = true;
+    document.getElementById("gender").disabled = true;
+    document.getElementById("dob").disabled = true;
+    document.getElementById("email").disabled = true;
+    document.getElementById("street").disabled = true;
+    document.getElementById("city").disabled = true;
+    document.getElementById("town").disabled = true;
+    document.getElementById("country").disabled = true;
+    document.getElementById("education").disabled = true;
+    document.getElementById("image").disabled = true;
     play.disabled = false;
     quit.disabled = false;
     again.disabled = false;
+    results.disabled = false;
 };

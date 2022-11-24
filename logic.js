@@ -13,6 +13,7 @@ const registering = document.querySelector('.registering');
 const play = document.querySelector('.play');
 const quit = document.querySelector('.quit');
 const again = document.querySelector('.play-agn');
+const results = document.querySelector('.results');
 
 //CREATE CATEGORY ROW
 function initCatRow() {
@@ -172,7 +173,20 @@ function showAll() {
 //ENABLE BUTTONS
 const enableDisable = () => {
     registering.disabled = false;
+    document.getElementById("fname").disabled = false;
+    document.getElementById("lname").disabled = false;
+    document.getElementById("gender").disabled = false;
+    document.getElementById("dob").disabled = false;
+    document.getElementById("email").disabled = false;
+    document.getElementById("street").disabled = false;
+    document.getElementById("city").disabled = false;
+    document.getElementById("town").disabled = false;
+    document.getElementById("country").disabled = false;
+    document.getElementById("education").disabled = false;
+    document.getElementById("image").disabled = false;
     play.disabled = true;
     quit.disabled = true;
     again.disabled = true;
+    results.disabled = true;
 };
+
