@@ -4,7 +4,7 @@
 const mobileMenu = document.querySelector('.mobile-nav');
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');
-const registering = document.querySelector('.register');
+const registering = document.querySelector('.registering');
 const play = document.querySelector('.play');
 const quit = document.querySelector('.quit');
 
@@ -18,8 +18,6 @@ hamburger.addEventListener('click', function () {
     this.classList.toggle('is-active');
     mobileMenu.classList.toggle('is-active');
 });
-
-registering.addEventListener('click', Register);
 
 //Function to calculate age based on date of birth
 function calculateAge() {
@@ -70,7 +68,7 @@ function Register() {
         alert("Age must be over 12");
         return false;
     } else if (email != "") {
-        if(atpos < 1 || dotpos - atpos < 2){
+        if(atpos < 1 || dotpos - atpos < 2) {
             alert("Email must be filled out using @someemail.com");
             return false;
         }
@@ -90,6 +88,13 @@ function Register() {
         }
         console.table(PlayersData);
         alert("Welcome " + fname + " " + lname + " to Jeopardy!");
+        registering.addEventListener('click', disableEnable);
         return true;
     }
 }
+
+const disableEnable = () => {
+        registering.disabled = true;
+        play.disabled = false;
+        quit.disabled = false;
+};

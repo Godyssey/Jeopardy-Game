@@ -1,8 +1,10 @@
 // Game Logic for Jeopardy Game
 
 //INITIALIZE THE GAME BOARD ON PAGE LOAD
-initCatRow()
-initBoard()
+function PlayGame(){
+    initCatRow()
+    initBoard()
+}
 
 document.querySelector('#start-game').addEventListener('click',buildCategories)
 

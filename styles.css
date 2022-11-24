@@ -1,13 +1,13 @@
 /* Stylesheet for Jeopardy Game*/
 
 :root {
-    --text: #ffffff;
-    --dark: #042a43;
+    --text: #F7F7F7;
+    --dark: #1c2f27;
     --light: #ffffff;
-    --accent: #7d4cdb;
-    --accent2: #ac71e8;
-    --background: #393058;
-    --background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237d4cdb' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    --accent: #6D9886;
+    --accent2: #F2E7D5;
+    --background: #393E46;
+    --background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8bead' fill-opacity='0.43'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 * {
@@ -353,7 +353,7 @@ span {
     justify-content: center;
     /*horizontal*/
     border: 2px solid white;
-    background-color: var(--accent2);
+    background-color: var(--accent);
     color: white;
     border-radius: 5px;
     margin: 5px;
@@ -367,7 +367,7 @@ span {
 .category-box {
     font-size: .8rem;
     line-height: 25px;
-    background-color: var(--accent2);
+    background-color: var(--accent);
 }
 
 .clicked-box {
@@ -379,12 +379,74 @@ span {
 }
 
 /* About Page */
-.about {
+.abt-bg {
+    border: 2px solid var(--dark);
+    border-radius: 5px;
+    width: 70%;
+    background-color: var(--accent);
+    color: var(--dark);
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.uni {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin: 0 auto;
-    width: 80%;
+    margin-top: 50px;
+    font-size: 25px;
+    font-family: 'Rubik', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.school {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    font-size: 20px;
+    font-family: 'Rubik', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.mod {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    font-size: 20px;
+    font-family: 'Rubik', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.members {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: underline;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Rubik', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ul {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    list-style-type: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 17px;
 }

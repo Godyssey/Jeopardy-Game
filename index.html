@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeopardy - Sign In</title>
+    <title>Jeopardy</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
@@ -23,16 +24,21 @@
             <h1>Jeopardy</h1>
             <div class="menu">
                 <a href="splash.html">Home</a>
-                <a href="#">Play</a>
+                <a href="index.html">Play</a>
                 <a href="about.html">About</a>
             </div>
-
-            <button class="hamburger ">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+            <div>
+                <button class="hamburger ">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+    </nav>
+    <nav class="mobile-nav">
+        <a href="splash.html">Home</a>
+        <a href="index.html">Play</a>
+        <a href="about.html">About</a>
     </nav>
 
     <!-- Register Form -->
@@ -102,9 +108,10 @@
                 <h5>BUTTONS</h5>
             </legend>
             <br>
-            <a href="#" class="regbut registering" onclick="Register()">REGISTER</a>
-            <a href="#area" class="regbut play" onclick="PlayGame()">PLAY</a>
-            <a href="#" class="regbut quit" onclick="findPercentageScore()">QUIT</a>
+            <button type="button" class="regbut registering" id="registering"
+                onclick="Register(); disableEnable()">REGISTER</button>
+            <button type="button" class="regbut play" id="play" onclick="PlayGame()" disabled>PLAY</button>
+            <button type="button" class="regbut quit" id="quit" onclick="findPercentageScore()" disabled>QUIT</button>
             <br><br>
             <legend>
                 <h4>Player Information</h4>
@@ -113,8 +120,8 @@
             <textarea class="register disabled" name="showpercentage" id="playerinfo" disabled></textarea>
             <label class="register">Player Data</label>
             <textarea class="register disabled" name="showallplayers" id="showallplayers" disabled></textarea>
-            <script src="script.js"></script>
         </form>
+        <script src="script.js"></script>
     </fieldset>
     <br><br><br>
 
